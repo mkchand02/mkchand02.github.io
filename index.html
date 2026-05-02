@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Milan G. Chandiramani — AI/ML Engineer</title>
+<meta name="description" content="AI/ML Engineer & Agentic Systems Builder. M.S. Computer Science @ Stevens Institute. Building production LLM pipelines, multi-agent orchestration, and real-time distributed systems."/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#050810;--bg2:#080d1a;--gold:#c8a96e;--gold2:#e8c98e;--blue:#1a3a6e;--text:#e8e4d8;--muted:#7a7a8a;--card:#0d1525;--border:#1e2d4a;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;overflow-x:hidden;}
+#canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(5,8,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--gold);letter-spacing:0.05em;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+#hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;}
+.hero-inner{max-width:860px;}
+.hero-tag{display:inline-block;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:0.35rem 1rem;border-radius:2px;margin-bottom:2rem;animation:fadeUp 0.8s ease both;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:1.2rem;animation:fadeUp 0.8s 0.15s ease both;}
+h1 span{color:var(--gold);}
+.hero-sub{font-size:0.85rem;color:var(--muted);max-width:560px;margin:0 auto 2.5rem;line-height:1.8;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s 0.45s ease both;}
+.btn{padding:0.75rem 2rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-decoration:none;border-radius:3px;transition:all 0.3s;cursor:pointer;border:none;}
+.btn-gold{background:var(--gold);color:#050810;font-weight:600;}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold);}
+.btn-outline:hover{background:rgba(200,169,110,0.1);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:3.5rem;animation:fadeUp 0.8s 0.6s ease both;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);}
+.stat-label{font-size:0.65rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:0.2rem;}
+section{position:relative;z-index:1;padding:5rem 2rem;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-tag{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:3rem;}
+.section-title span{color:var(--gold);}
+#skills{background:var(--bg2);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.5rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.skill-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+.skill-card:hover::before{transform:scaleX(1);}
+.skill-cat{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.skill-items{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tag{background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.2);color:var(--text);font-size:0.68rem;padding:0.3rem 0.6rem;border-radius:2px;letter-spacing:0.05em;}
+.exp-list{display:flex;flex-direction:column;gap:1.5rem;}
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.8rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;transition:all 0.3s;}
+.exp-card:hover{border-color:var(--gold);transform:translateX(4px);}
+.exp-dot{width:10px;height:10px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0;}
+.exp-role{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.2rem;}
+.exp-company{color:var(--gold);font-size:0.78rem;margin-bottom:0.2rem;}
+.exp-date{color:var(--muted);font-size:0.68rem;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.exp-desc{color:var(--muted);font-size:0.75rem;line-height:1.8;}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.8rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,169,110,0.04),transparent);opacity:0;transition:opacity 0.3s;}
+.proj-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+.proj-card:hover::after{opacity:1;}
+.proj-num{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:rgba(200,169,110,0.12);margin-bottom:0.5rem;line-height:1;}
+.proj-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.proj-desc{color:var(--muted);font-size:0.72rem;line-height:1.8;margin-bottom:1rem;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem;}
+.proj-link{font-size:0.68rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid transparent;transition:border-color 0.2s;}
+.proj-link:hover{border-bottom-color:var(--gold);}
+#awards{background:var(--bg2);}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;}
+.award-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;}
+.award-card:hover{border-color:var(--gold);}
+.award-icon{font-size:1.5rem;flex-shrink:0;}
+.award-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;margin-bottom:0.2rem;}
+.award-sub{color:var(--muted);font-size:0.68rem;line-height:1.6;}
+#contact{text-align:center;}
+.contact-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+.contact-link{display:flex;align-items:center;gap:0.5rem;color:var(--muted);text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:3px;transition:all 0.3s;}
+.contact-link:hover{color:var(--gold);border-color:var(--gold);}
+footer{position:relative;z-index:1;text-align:center;padding:2rem;color:var(--muted);font-size:0.65rem;letter-spacing:0.1em;border-top:1px solid var(--border);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<nav>
+  <div class="nav-logo">MGC</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Available · NYC Metro · Open to Relocation</div>
+    <h1>Milan G.<br/><span>Chandiramani</span></h1>
+    <p class="hero-sub">AI/ML Engineer & Agentic Systems Builder. M.S. Computer Science @ Stevens Institute. Building production LLM pipelines, multi-agent orchestration, and real-time distributed systems.</p>
+    <div class="hero-btns">
+      <a class="btn btn-gold" href="mailto:milan.chandiramani@gmail.com">Get In Touch</a>
+      <a class="btn btn-outline" href="https://github.com/mkchand02" target="_blank">GitHub →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years Production AI/ML</div></div>
+      <div class="stat"><div class="stat-num">3.97</div><div class="stat-label">GPA · Dean's List</div></div>
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">ML Models Deployed</div></div>
+      <div class="stat"><div class="stat-num">$1M+</div><div class="stat-label">Revenue Impact</div></div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-tag reveal">Technical Arsenal</div>
+    <h2 class="section-title reveal">Skills & <span>Stack</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-cat">Languages</div><div class="skill-items"><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Bash</span><span class="tag">R</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">AI / LLM / Agentic</div><div class="skill-items"><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">Google ADK</span><span class="tag">Gemini API</span><span class="tag">vLLM</span><span class="tag">llama.cpp</span><span class="tag">RAG</span><span class="tag">Tool Calling</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">ML Frameworks</div><div class="skill-items"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Transformers</span><span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">LSTM</span><span class="tag">CNN</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Cloud & Infra</div><div class="skill-items"><span class="tag">GCP</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Docker</span><span class="tag">Cloud Run</span><span class="tag">Vertex AI</span><span class="tag">Kafka</span><span class="tag">Kubernetes</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Data Engineering</div><div class="skill-items"><span class="tag">PySpark</span><span class="tag">Hadoop</span><span class="tag">Databricks</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Airflow</span><span class="tag">REST APIs</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Dev Stack</div><div class="skill-items"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">WebSocket</span><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">Streamlit</span><span class="tag">Firebase</span><span class="tag">Git</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-tag reveal">Career</div>
+    <h2 class="section-title reveal">Work <span>Experience</span></h2>
+    <div class="exp-list">
+      <div class="exp-card reveal">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">AI/ML Engineer</div>
+          <div class="exp-company">Tata Consultancy Services Ltd. · Mumbai, India</div>
+          <div class="exp-date">Jul 2021 – Aug 2024 · 3+ Years</div>
+          <div class="exp-desc">Architected a production agentic chatbot (GPT-4, LangChain, Azure Cognitive Search) and Context-Driven Search API boosting relevance by 200%. Engineered real-time Kafka→MongoDB pipelines serving 10 global regions across 300+ client applications. On-call SQL/MongoDB optimization preventing $1M+ in revenue loss.</div>
+        </div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">Teaching Assistant — Algorithms & Statistical ML</div>
+          <div class="exp-company">Stevens Institute of Technology · Hoboken, NJ</div>
+          <div class="exp-date">Jan 2025 – Present</div>
+          <div class="exp-desc">Mentor 130+ students across CS 590 (Algorithms) and CS 560 (Statistical ML: PAC learning, VC dimensions, Transformers). Automated grading pipelines delivering feedback 3× faster.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-tag reveal">Portfolio</div>
+    <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+    <div class="proj-grid">
+      <div class="proj-card reveal"><div class="proj-num">01</div><div class="proj-title">GCP Way Back Home: Agentic AI</div><div class="proj-desc">Full-stack multimodal agentic system — React frontend + FastAPI backend orchestrating a Google ADK agent via Gemini Live API with bi-directional WebSocket streaming. Deployed on Cloud Run.</div><div class="proj-tags"><span class="tag">Google ADK</span><span class="tag">Gemini Live</span><span class="tag">FastAPI</span><span class="tag">WebSocket</span><span class="tag">Cloud Run</span></div><a class="proj-link" href="https://github.com/mkchand02" target="_blank">View on GitHub ↗</a></div>
+      <div class="proj-card reveal"><div class="proj-num">02</div><div class="proj-title">ClaimCrane: AI Fraud Detector</div><div class="proj-desc">Insurance fraud detection across 5 verticals — dual-layer pipeline fusing CV forensics (ELA, FFT, Noise, JPEG Grid, EXIF) with Gemma 3 27B vision inference via weighted majority-vote scoring.</div><div class="proj-tags"><span class="tag">Gemma 3 27B</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">NumPy</span><span class="tag">Vercel</span></div><a class="proj-link" href="https://claim-crane-web.vercel.app/" target="_blank">Live Demo ↗</a></div>
+      <div class="proj-card reveal"><div class="proj-num">03</div><div class="proj-title">NYC CitiBike Congestion Forecasting</div><div class="proj-desc">Real-time multivariate time-series system (LSTM/XGBoost/ARIMA) on live GBFS feeds achieving R²≈0.96. Geospatial Streamlit dashboard for station-level risk assessment.</div><div class="proj-tags"><span class="tag">LSTM</span><span class="tag">XGBoost</span><span class="tag">ARIMA</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span></div><a class="proj-link" href="https://github.com/mkchand02" target="_blank">View on GitHub ↗</a></div>
+      <div class="proj-card reveal"><div class="proj-num">04</div><div class="proj-title">Energy-Based Reasoning QA</div><div class="proj-desc">Transformer EBM + Hierarchical VAE for latent-space iterative reasoning via MCMC. Diagnosed posterior collapse and energy flatness over 400+ GPU-hours.</div><div class="proj-tags"><span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">VAE</span><span class="tag">MCMC</span></div><a class="proj-link" href="https://github.com/mkchand02" target="_blank">View on GitHub ↗</a></div>
+      <div class="proj-card reveal"><div class="proj-num">05</div><div class="proj-title">UAV Intrusion Detection</div><div class="proj-desc">15 ML models (90%+ macro accuracy) on Dockerized Raspberry Pi 4 for UAV intrusion detection using sensor waveform and cyber data. Edge-AI compute benchmarking.</div><div class="proj-tags"><span class="tag">CNN</span><span class="tag">LSTM</span><span class="tag">SVM</span><span class="tag">Docker</span><span class="tag">Edge AI</span></div><a class="proj-link" href="https://github.com/mkchand02" target="_blank">View on GitHub ↗</a></div>
+      <div class="proj-card reveal"><div class="proj-num">06</div><div class="proj-title">Distributed Gene MoA Classification</div><div class="proj-desc">Distributed multi-class classifiers on Tahoe-100M genomic dataset using Spark ML + PCA on GCP Databricks. Large-scale biological ML pipeline scalability analysis.</div><div class="proj-tags"><span class="tag">PySpark</span><span class="tag">Spark ML</span><span class="tag">PCA</span><span class="tag">Databricks</span><span class="tag">GCP</span></div><a class="proj-link" href="https://github.com/mkchand02" target="_blank">View on GitHub ↗</a></div>
+    </div>
+  </div>
+</section>
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-tag reveal">Recognition</div>
+    <h2 class="section-title reveal">Awards & <span>Achievements</span></h2>
+    <div class="awards-grid">
+      <div class="award-card reveal"><div class="award-icon">🏆</div><div><div class="award-title">1st Place — QuackHacks '26</div><div class="award-sub">Chubb Insurance AI Challenge · 2026</div></div></div>
+      <div class="award-card reveal"><div class="award-icon">🎓</div><div><div class="award-title">Dean's List — All Semesters</div><div class="award-sub">Stevens Institute of Technology · GPA 3.97/4.0</div></div></div>
+      <div class="award-card reveal"><div class="award-icon">🏅</div><div><div class="award-title">MSI Ambassador Award</div><div class="award-sub">Management & Strategy Institute · Verified</div></div></div>
+      <div class="award-card reveal"><div class="award-icon">⭐</div><div><div class="award-title">TSEC Ambassador & Rank Holder</div><div class="award-sub">Thadomal Shahani Engineering College</div></div></div>
+      <div class="award-card reveal"><div class="award-icon">🧠</div><div><div class="award-title">Olympiad Ranker</div><div class="award-sub">National-level competitive ranking</div></div></div>
+      <div class="award-card reveal"><div class="award-icon">🤝</div><div><div class="award-title">Volunteer & Mentor</div><div class="award-sub">GirlScript Uplift · TSEC · Let's Share a Meal NY/NJ</div></div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag reveal">Let's Connect</div>
+    <h2 class="section-title reveal">Get In <span>Touch</span></h2>
+    <p class="hero-sub reveal" style="margin:0 auto 0;">Open to full-time roles in AI/ML Engineering, Agentic Systems, MLOps, and Data Engineering. NYC Metro — open to relocation.</p>
+    <div class="contact-links reveal">
+      <a class="contact-link" href="mailto:milan.chandiramani@gmail.com">✉ Email</a>
+      <a class="contact-link" href="https://linkedin.com/in/milan-chandiramani" target="_blank">in LinkedIn</a>
+      <a class="contact-link" href="https://github.com/mkchand02" target="_blank">{ } GitHub</a>
+      <a class="contact-link" href="https://g.dev/mkchand02" target="_blank">⬡ GDG Profile</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Milan G. Chandiramani · Built with intention · mkchand02.github.io</footer>
+<script>
+const canvas=document.getElementById('canvas');const ctx=canvas.getContext('2d');let W,H,particles=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+function Particle(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-0.5)*0.3;this.vy=(Math.random()-0.5)*0.3;this.r=Math.random()*1.5+0.3;this.a=Math.random()*0.4+0.05;}
+for(let i=0;i<120;i++)particles.push(new Particle());
+function draw(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(200,169,110,${p.a})`;ctx.fill();});for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x;const dy=particles[i].y-particles[j].y;const d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(200,169,110,${0.06*(1-d/120)})`;ctx.lineWidth=0.5;ctx.stroke();}}}requestAnimationFrame(draw);}
+draw();
+const reveals=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});reveals.forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>

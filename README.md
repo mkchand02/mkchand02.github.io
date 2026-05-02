@@ -28,6 +28,32 @@ milan = {
 
 ---
 
+## 💼 Experience
+
+**🎓 Teaching Assistant — Algorithms & Statistical ML** · Stevens Institute of Technology, NJ
+`Jan 2025 – Present`
+> Mentor 130+ students across CS 590 (Algorithms: DP, graphs, backtracking) and CS 560 (Statistical ML: PAC learning, VC dimensions, Transformers). Automated grading pipelines delivering feedback 3× faster.
+
+---
+
+**📋 Graduate Assistant** · Graduate Education Office, Stevens Institute of Technology, NJ
+`Oct 2024 – Dec 2024`
+> Compiled and reported career outcomes of 1,000+ students via calls, emails, and survey forms. Automated data collection using MS Excel and the department's reporting application API — increasing results by **3×**.
+
+---
+
+**🤖 AI/ML Engineer** · Tata Consultancy Services Ltd., Mumbai, India
+`Jul 2021 – Aug 2024`
+> Architected a production agentic chatbot (GPT-4, LangChain, Azure Cognitive Search) processing heterogeneous docs at scale + Context-Driven Search API boosting relevance by **200%**. Engineered real-time Kafka→MongoDB pipelines serving **10 global regions** · 300+ client apps. On-call optimization preventing **$1M+** revenue loss.
+
+---
+
+**👨‍🏫 Programming Teacher** · Neebal Learning Pvt. Ltd., Mumbai, India
+`Jun 2019 – Jun 2021`
+> Taught 100+ engineering students in Python, Java, C, C++, DBMS, and Data Structures & Algorithms — emphasizing clean, robust, bug-free programming practices.
+
+---
+
 ## 🏆 Highlights
 
 | | |
